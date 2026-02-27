@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vipassana IFoS Interview Guide</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: #f8f9fa; color: #222; }
+
+/* SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: 240px; height: 100vh;
+  background: #1B4332; color: #fff; overflow-y: auto; z-index: 100; padding-bottom: 40px;
+}
+.sidebar-title { padding: 20px; font-size: 15px; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.nav-link { display: block; padding: 8px 20px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; border-left: 3px solid transparent; }
+.nav-link:hover, .nav-link.active { color: #fff; background: rgba(255,255,255,0.08); border-left-color: #74C69D; }
+
+/* MAIN */
+#main { margin-left: 240px; padding: 40px; max-width: 860px; }
+
+h1 { font-size: 28px; color: #1B4332; margin-bottom: 6px; }
+.subtitle { color: #666; margin-bottom: 40px; font-style: italic; }
+
+/* SECTION */
+.section { margin-bottom: 60px; }
+.section-title { font-size: 22px; color: #1B4332; border-bottom: 3px solid #74C69D; padding-bottom: 8px; margin-bottom: 24px; }
+
+/* QA CARD */
+.qa-card { border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; overflow: hidden; }
+.qa-q { background: #f0faf2; padding: 14px 18px; font-weight: bold; color: #1B4332; font-size: 15px; }
+.qa-a { padding: 16px 18px; position: relative; }
+.answer-text { font-size: 15px; line-height: 1.75; color: #333; white-space: pre-wrap; min-height: 40px; }
+.answer-text:empty::before { content: "Click Edit to add your answer..."; color: #aaa; font-style: italic; }
+
+/* EDIT BUTTON */
+.edit-btn { position: absolute; top: 12px; right: 12px; background: #1B4332; color: #fff; border: none; border-radius: 4px; padding: 5px 12px; font-size: 12px; cursor: pointer; }
+.edit-btn:hover { background: #2D6A4F; }
+.save-btn { background: #B45309; }
+.save-btn:hover { background: #92400e; }
+
+/* TEXTAREA */
+.answer-edit { width: 100%; min-height: 120px; font-family: Georgia, serif; font-size: 15px; line-height: 1.75; border: 2px solid #1B4332; border-radius: 4px; padding: 10px; resize: vertical; display: none; }
+
+/* SAVE ALL */
+#save-all-bar { position: fixed; bottom: 0; left: 240px; right: 0; background: #1B4332; padding: 12px 40px; display: flex; align-items: center; gap: 16px; z-index: 50; }
+#save-all-btn { background: #74C69D; color: #1B4332; border: none; padding: 8px 24px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 14px; }
+#save-all-btn:hover { background: #52b788; }
+#save-status { color: rgba(255,255,255,0.8); font-size: 13px; }
+#export-btn { background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.3); padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 13px; margin-left: auto; }
+#export-btn:hover { background: rgba(255,255,255,0.1); }
+
+/* TIP BOX */
+.tip { background: #fffbeb; border-left: 4px solid #B45309; padding: 12px 16px; margin: 12px 0; font-size: 14px; color: #78350F; font-style: italic; border-radius: 0 6px 6px 0; }
+
+/* TIMETABLE */
+.timetable { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.timetable td { padding: 8px 14px; border: 1px solid #ddd; }
+.timetable tr:nth-child(even) { background: #f0faf2; }
+.timetable .time { font-family: monospace; color: #1B4332; font-weight: bold; white-space: nowrap; }
+
+#main { padding-bottom: 80px; }
+
+@media(max-width:700px){
+  #sidebar{display:none}
+  #main{margin-left:0;padding:20px}
+  #save-all-bar{left:0}
+}
+</style>
+</head>
+<body>
+
+<nav id="sidebar">
+  <div class="sidebar-title">🌿 Vipassana IFoS Guide</div>
+  <a class="nav-link" href="#s1">01 — The Word "Vipassana"</a>
+  <a class="nav-link" href="#s2">02 — What Is Vipassana</a>
+  <a class="nav-link" href="#s3">03 — Personal Journey</a>
+  <a class="nav-link" href="#s4">04 — Anapana, Vipassana & Metta</a>
+  <a class="nav-link" href="#s5">05 — 10-Day Course</a>
+  <a class="nav-link" href="#s6">06 — Deep Experiences</a>
+  <a class="nav-link" href="#s7">07 — Post-Course Life</a>
+  <a class="nav-link" href="#s8">08 — Anicca</a>
+  <a class="nav-link" href="#s9">09 — Enlightenment</a>
+  <a class="nav-link" href="#s10">10 — Fad or Real?</a>
+  <a class="nav-link" href="#s11">11 — IFoS Applications</a>
+  <a class="nav-link" href="#s12">12 — The Mosquito Answer</a>
+  <a class="nav-link" href="#s13">13 — Teach the Board</a>
+  <a class="nav-link" href="#s14">14 — Tough Questions</a>
+  <a class="nav-link" href="#s15">15 — Myths & Misconceptions</a>
+  <a class="nav-link" href="#s16">16 — Identity & Philosophy</a>
+  <a class="nav-link" href="#s17">⭐ All Tips</a>
+</nav>
+
+<div id="main">
+  <h1>Vipassana — Complete IFoS Interview Guide</h1>
+  <p class="subtitle">Click <strong>Edit</strong> on any answer to personalise it. Your changes save in this browser automatically.</p>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="s1">
+    <div class="section-title">Section 01 — The Word "Vipassana"</div>
+
+    <div class="qa-card" data-id="1-1">
+      <div class="qa-q">Q: What does the word "Vipassana" actually mean?</div>
+      <div class="qa-a">
+        <div class="answer-text">The word comes from the ancient Pali language — the language in which the Buddha originally taught. It is made of two parts. "Vi" means special, clear, or deep. "Passana" means seeing or observing. Together — Vipassana means to see clearly. To see things as they actually are — not as we wish them to be, not as we fear them to be, but as they actually are. That is the entire practice in three words: See. Clearly. Reality.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="1-2">
+      <div class="qa-q">Q: Why Pali specifically? Why not Sanskrit?</div>
+      <div class="qa-a">
+        <div class="answer-text">Because the Buddha taught in Pali — the common language of ordinary people in northern India around 500 BCE. It was not the language of priests or scholars. Sanskrit was for the elite. Pali was for the farmer, the trader, the mother, the child. This choice was itself a philosophical statement — that the truth he taught belonged to everyone, not only to the privileged. Goenka honoured this same spirit.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="1-3">
+      <div class="qa-q">Q: "To see things as they really are" — what makes it so difficult?</div>
+      <div class="qa-a">
+        <div class="answer-text">Because we almost never do it. From birth, every experience is immediately filtered through memory, expectation, desire, and fear. We don't see what is in front of us — we see our interpretation of it. Vipassana removes those distortions slowly — not by thinking about them but by observing raw physical sensation before the mind has filtered it. To see things as they really are is the most radical act a human being can attempt — because it includes seeing yourself as you really are.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="1-4">
+      <div class="qa-q">Q: How would you explain Vipassana to a ten-year-old?</div>
+      <div class="qa-a">
+        <div class="answer-text">You know how sometimes you get very angry — and later you think: why did I say that? The feeling came so fast, and the action came so fast after it, that there was no space in between to choose. Vipassana is the practice of making that space bigger. It teaches you to notice — very slowly — what is actually happening inside you before you do anything. When you can feel the anger before it becomes the shout, you suddenly have a choice. That is a skill. And like all skills, it can be learned.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="1-5">
+      <div class="qa-q">Q: After everything you have experienced — what does the word Vipassana mean to YOU now?</div>
+      <div class="qa-a">
+        <div class="answer-text">Before the course — Vipassana meant a technique. I understood the words "to see things as they really are" the way you understand a sentence in a language you have studied but never spoken.
+
+After the course — and three years of daily practice, imperfect and ongoing — Vipassana means the choice I have that I did not have before. The two seconds between what happens and what I do. The ability to feel fear fully and act anyway.
+
+It means the mosquito I did not slap. It means my father's tired face, seen clearly for the first time on Day 9. It means the 4am darkness and the decision — renewed every morning — to sit down and look honestly at what is actually here.
+
+It means — to see clearly. And in that seeing, however partial, however imperfect — something has been irrevocably changed.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="s2">
+    <div class="section-title">Section 02 — What Is Vipassana: Basics & Philosophy</div>
+
+    <div class="qa-card" data-id="2-1">
+      <div class="qa-q">Q: What is Vipassana and how is it different from other meditation?</div>
+      <div class="qa-a">
+        <div class="answer-text">Vipassana means "to see things as they really are." It is one of India's most ancient meditation techniques, rediscovered by Gautama Buddha and preserved in its original purity in Myanmar. Unlike concentration-based meditation like mantra chanting or visualization, Vipassana works on deep-rooted mental conditioning by observing bodily sensations with equanimity. No visualization, no deity, no mantra — just pure self-observation.
+
+Before Vipassana, I tried breath-awareness on my own. It calmed me temporarily, but the moment stress arose, the calm vanished. With Vipassana, there is now a gap — however small — between what happens and how I respond. That gap is what Vipassana builds.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="2-2">
+      <div class="qa-q">Q: Is Vipassana a religious practice?</div>
+      <div class="qa-a">
+        <div class="answer-text">No. Goenka made it clear from Day 1 — this technique belongs to no religion. You are not asked to believe anything. You are only asked to observe. I have met devout Hindus, practicing Muslims, and committed atheists — all sitting in the same hall, all benefiting equally. That universality is not a marketing claim — I witnessed it personally. Vipassana strengthened my own values without imposing any external belief system on me.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="2-3">
+      <div class="qa-q">Q: What are Anicca, Dukkha, and Anatta?</div>
+      <div class="qa-a">
+        <div class="answer-text">Anicca means impermanence. Dukkha means suffering arising from clinging to what is impermanent. Anatta means no fixed self — what we call "I" is a constantly changing process.
+
+On Day 8, scanning sensations, I noticed a mild tingling in my left hand. Over ten minutes, I watched it intensify — almost electric. Then, without any intervention from me, it began to dissolve. Within another ten minutes it had faded entirely. I had done nothing to create it and nothing to stop it. In that sequence, Anicca was not a philosophical statement. It was this — a vivid, undeniable demonstration that nothing stays.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="2-4">
+      <div class="qa-q">Q: What is Sankara in Vipassana?</div>
+      <div class="qa-a">
+        <div class="answer-text">Sankara roughly means mental formation or conditioned reaction. Every time we experience something pleasant, we generate craving. Every time unpleasant, we generate aversion. These reactions, when not observed and allowed to pass, leave a residue — a Sankara — in the subconscious. Accumulated over a lifetime, these form the deep conditioning that drives habitual behavior.
+
+This explained why I kept repeating the same mistakes despite knowing better intellectually. The Sankaras are at a deeper level than intellect. Only experiential observation at the level of body sensation can reach and dissolve them.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="2-5">
+      <div class="qa-q">Q: Who was S.N. Goenka and what was his contribution?</div>
+      <div class="qa-a">
+        <div class="answer-text">S.N. Goenka (1924–2013) was a Burmese-Indian teacher who brought Vipassana from Myanmar to India in 1969 after learning it from Sayagyi U Ba Khin. His greatest contribution was making it universally accessible — free of cost, free of religion, free of dogma. Today there are over 200 Vipassana centers worldwide. He introduced Vipassana into Tihar Jail with remarkable results.
+
+What personally moved me was his intellectual honesty. He would say repeatedly — "Don't accept what I say. Experience it yourself and then judge." He never built a personality cult. He often said he was just a messenger — the technique was the teacher.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="s3">
+    <div class="section-title">Section 03 — Your Personal Journey</div>
+
+    <div class="qa-card" data-id="3-1">
+      <div class="qa-q">Q: Why specifically Vipassana? Why not other styles of meditation?</div>
+      <div class="qa-a">
+        <div class="answer-text">What drew me to Vipassana specifically was its complete rationality and lack of dogma. No visualization, no deity, no mantra — just pure self-observation. It appealed to my scientific temperament. I wasn't asked to believe anything — I was asked to observe and experience.
+
+I had read about the Tihar Jail experiment where thousands of prisoners practiced Vipassana and showed measurable changes in behavior. That practical, verifiable impact in such a tough environment convinced me this was something real — not just theory.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="3-2">
+      <div class="qa-q">Q: What was your favourite lesson or teaching of Goenka?</div>
+      <div class="qa-a">
+        <div class="answer-text">"Anicca, Anicca, Anicca." Everything is impermanent. He would say this not as a philosophical statement but almost as a practical instruction for how to live. When you are happy, you don't cling desperately — you know it will change. When you are suffering, you don't despair — you know this too shall pass.
+
+I remember a particularly difficult sitting where my knees were in tremendous pain. Goenka's recorded voice said — "Anicca... observe... it will pass." And it did. Not immediately, but my relationship with the pain changed. I carry this into daily life as a practical tool, not just a philosophical idea.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="3-3">
+      <div class="qa-q">Q: What do you attain from Vipassana?</div>
+      <div class="qa-a">
+        <div class="answer-text">The most significant thing Vipassana has given me is the ability to pause. Before, if something went wrong, my reaction was almost automatic. Now there is a small but real gap between what happens and how I respond. In that gap, I can choose.
+
+Second — much clearer awareness of my own patterns: where I get impatient, where I become defensive, what triggers anxiety. Third — the ability to sit with discomfort without immediately escaping it. In a forest posting, where conditions can be harsh and isolation real, this capacity is not a small thing. Vipassana didn't give me peace as a feeling — it gave me tools to create peace from within.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="3-4">
+      <div class="qa-q">Q: You are young — isn't Vipassana something for older people?</div>
+      <div class="qa-a">
+        <div class="answer-text">The earlier you begin, the less conditioning you have to undo. A young person beginning practice has perhaps twenty-five years of conditioning accumulated. An older person may have sixty or seventy. Both can make progress, but the young person begins with a lighter burden.
+
+Also — there is no age at which suffering is inappropriate to address. The reactive patterns that will define a career in public service are being established right now. Beginning the practice while those patterns are being formed is far more useful than waiting until they are fully entrenched. The Buddha achieved enlightenment at thirty-five. The Gita was delivered to Arjuna on a battlefield — not in a retirement home.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section" id="s4">
+    <div class="section-title">Section 04 — Anapana, Vipassana & Metta System</div>
+
+    <div class="qa-card" data-id="4-1">
+      <div class="qa-q">Q: What exactly is Anapana meditation?</div>
+      <div class="qa-a">
+        <div class="answer-text">Anapana is the first stage of Vipassana practice. "Ana" means incoming breath, "Apana" means outgoing breath. You sit, close your eyes, and observe the breath entering and leaving through the nostrils — specifically the sensation of air touching the area below the nostrils and above the upper lip. That small area becomes your entire universe of focus.
+
+From my own experience, it sounds deceptively simple — but it is extraordinarily difficult. Within seconds the mind wanders. The moment you realize you have wandered, simply return to the breath without judgment. That returning, done thousands of times, is itself the training.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="4-2">
+      <div class="qa-q">Q: How is Anapana different from Pranayama?</div>
+      <div class="qa-a">
+        <div class="answer-text">Pranayama is breath control — you deliberately alter the rhythm, depth, and pattern of breathing. Anapana is fundamentally different — you do not control the breath at all. You simply observe it as it is, however it is.
+
+This carries philosophical weight. Pranayama is doing — Anapana is pure observing. From the very beginning, through Anapana, you are training the mind's most essential skill — to see without distorting what it sees. That quality of non-interfering awareness is what the entire Vipassana path depends on.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="4-3">
+      <div class="qa-q">Q: What is Metta Bhavana and when is it practiced?</div>
+      <div class="qa-a">
+        <div class="answer-text">Metta Bhavana means cultivation of loving-kindness or goodwill toward all beings. It is practiced on Day 10 — the final day. After 9 days of intensive inner observation, Metta serves as a beautiful culmination. You generate goodwill — first toward yourself, then toward those close to you, then toward neutral people, then toward difficult people, and finally toward all beings everywhere without exception.
+
+My experience of Metta on Day 10 was genuinely moving. After 9 days of mostly difficult inner work, sitting in that hall genuinely wishing happiness to every being — including people I had conflict with — felt profoundly natural rather than forced. The ground had been prepared by 9 days of clearing.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="4-4">
+      <div class="qa-q">Q: How do Anapana, Vipassana, and Metta form a complete system?</div>
+      <div class="qa-a">
+        <div class="answer-text">Goenka described it as a three-part architecture — each part essential, each depending on the others.
+
+Anapana develops Samadhi — concentration. Without this, the mind is too scattered to do the deeper work.
+Vipassana uses that sharpened mind to develop Prajna — wisdom through experiential understanding of impermanence. This is where deep conditioning begins to dissolve.
+Metta is the natural expression of a purified mind — when craving and aversion reduce, genuine warmth toward all life arises naturally.
+
+Together they form the complete path — concentration to see clearly, wisdom to understand deeply, compassion to live rightly.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section" id="s5">
+    <div class="section-title">Section 05 — The 10-Day Course: Timetable & Teachings</div>
+
+    <div class="tip">📋 The daily timetable — same every day for 10 days:</div>
+    <table class="timetable">
+      <tr><td class="time">4:00 am</td><td>Morning wake-up bell</td></tr>
+      <tr><td class="time">4:30 – 6:30 am</td><td>Meditate in hall or room</td></tr>
+      <tr><td class="time">6:30 – 8:00 am</td><td>Breakfast break</td></tr>
+      <tr><td class="time">8:00 – 9:00 am</td><td>Group meditation in hall</td></tr>
+      <tr><td class="time">9:00 – 11:00 am</td><td>Meditate in hall or room</td></tr>
+      <tr><td class="time">11:00 am – 12:00 pm</td><td>Lunch break</td></tr>
+      <tr><td class="time">1:00 – 2:30 pm</td><td>Meditate in hall or room</td></tr>
+      <tr><td class="time">2:30 – 3:30 pm</td><td>Group meditation in hall</td></tr>
+      <tr><td class="time">3:30 – 5:00 pm</td><td>Meditate in hall or room</td></tr>
+      <tr><td class="time">5:00 – 5:30 pm</td><td>Tea break</td></tr>
+      <tr><td class="time">5:30 – 7:00 pm</td><td>Group meditation in hall</td></tr>
+      <tr><td class="time">7:00 – 8:30 pm</td><td>Evening discourse by Goenka (video)</td></tr>
+      <tr><td class="time">8:30 – 9:00 pm</td><td>Group meditation</td></tr>
+      <tr><td class="time">9:00 – 9:30 pm</td><td>Question time with assistant teacher</td></tr>
+      <tr><td class="time">9:30 pm</td><td>Lights out</td></tr>
+    </table>
+
+    <div class="qa-card" data-id="5-1">
+      <div class="qa-q">Q: 4am wake-up every day — be honest about what that was actually like.</div>
+      <div class="qa-a">
+        <div class="answer-text">Day 1 — the bell rang and I lay there for a full minute not believing it was already time. Four hours of sleep. Cold, dark, completely silent room. I got up — not from virtue, but from knowing that lying in bed thinking about getting up is actually more exhausting than getting up.
+
+Day 3 — I woke approximately two minutes before the bell. Three days of waking at 4am had begun to reset something in the body.
+
+Day 4 onward — the waking became progressively less difficult. Not pleasant — it never became pleasant. But the resistance reduced. I now wake between 4:30 and 5am at home — the shift in my body's sense of when a day should begin has never fully reversed.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="5-2">
+      <div class="qa-q">Q: What happened on Day 4 when Vipassana was introduced?</div>
+      <div class="qa-a">
+        <div class="answer-text">Day 4 was the most significant transition. The technique: systematic body scanning from the top of the head to the tips of the toes and back again, observing whatever sensations are present at each point without reacting.
+
+The Day 4 discourse explained it beautifully: the body is the field where the mind's conditioned patterns are stored. Every mental reaction has a physical component. Craving manifests as a pleasant sensation you want to prolong. Aversion manifests as an unpleasant sensation you want to end. By observing these without reacting, you break the chain at its root.
+
+Goenka used a beautiful analogy: the mind is like a pot of boiling water. You can blow on it from the top — that is intellectual understanding. Or you can remove the fire from underneath — that is what Vipassana does.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="5-3">
+      <div class="qa-q">Q: Which of Goenka's analogies stayed with you most?</div>
+      <div class="qa-a">
+        <div class="answer-text">The analogy of the two arrows. When an unpleasant experience occurs, two arrows strike you. The first arrow is the experience itself — the pain, the loss, the failure, the insult. Often outside your control. The second arrow is the mental reaction — the self-pity, the anger, the rumination. The second arrow is always self-inflicted.
+
+Ordinary human beings feel the first arrow and immediately pick up the second and shoot themselves with it. Vipassana does not remove the first arrow. Life will always have first arrows. But it trains you to put down the second arrow — to feel the first fully, without immediately picking up another.
+
+For a forest officer — a difficult posting is a first arrow. The mental narrative "this is unfair, I deserved better" — those are second and third arrows. All self-inflicted. All avoidable.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section" id="s6">
+    <div class="section-title">Section 06 — Deep Personal Experiences</div>
+
+    <div class="qa-card" data-id="6-1">
+      <div class="qa-q">Q: Take us through your very first day at the Vipassana center.</div>
+      <div class="qa-a">
+        <div class="answer-text">The first day was a mix of excitement and quiet panic. When I arrived, we surrendered our phones, books, journals — everything. I remember handing over my phone and feeling a strange anxiety, almost like losing a limb. I hadn't realized until that moment how attached I was to it — not for calls, but as an escape from my own mind. That realization itself was the first lesson, and I hadn't even sat down to meditate yet.
+
+That night in my room, without a phone, without anyone to talk to, I lay awake for a long time. My mind was extraordinarily loud. I realized that in ordinary life, I had never actually been alone with my mind. There was always something filling the space. That first night showed me how much noise was living inside me that I had been successfully avoiding for years.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="6-2">
+      <div class="qa-q">Q: What was the single hardest moment during your course?</div>
+      <div class="qa-a">
+        <div class="answer-text">Day 3. Without question. The initial curiosity had worn off. My knees ached constantly. My back was stiff. My mind was still extremely restless. I could not see any progress and was not even halfway through.
+
+I remember sitting in the hall that afternoon, genuinely asking myself — what am I doing here? What stopped me was something very simple — I decided to just finish the current sitting. Not the whole course, just the next hour. That reduction of the horizon — from "ten days" to "this one hour" — was the only thing that kept me there.
+
+That evening, Goenka's discourse addressed exactly this — he said Day 3 is when most people want to leave. The crisis point that, if crossed, opens into genuine progress.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="6-3">
+      <div class="qa-q">Q: Did you have a breakthrough moment? Describe it.</div>
+      <div class="qa-a">
+        <div class="answer-text">Yes, on Day 6. About 30 minutes into a strong determination sitting, I became aware of sensations throughout my entire body simultaneously — not pain, not pressure, but a kind of fine, subtle vibration. My breathing had slowed almost to nothing. My mind was unusually still — not blank, but like a very calm lake rather than the choppy ocean it usually was.
+
+Walking out of the hall afterward, the trees looked different — not literally, but in how I perceived them. Colors more vivid. Bird sounds distinct and clear. I felt strangely unhurried. Before that moment, I was practicing on faith. After it, I was practicing from experience. That is the difference that mattered.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="6-4">
+      <div class="qa-q">Q: How did you deal with physical pain during sitting?</div>
+      <div class="qa-a">
+        <div class="answer-text">Around Day 5, instead of fighting the pain, I tried observing it. I noticed where exactly it was — not "my knee hurts" as a vague complaint, but precisely — there is a burning sensation approximately two inches below the left kneecap. Is it constant? No — it pulses. Is it solid? No — within the pain there are different qualities.
+
+This act of precise observation did something unexpected — the pain became interesting rather than threatening. Not pleasant, but the suffering — which is the mental layer added on top of the physical sensation — reduced dramatically. I understood the difference between pain and suffering. Pain is the sensation. Suffering is the resistance to the sensation. Vipassana dissolves the resistance.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section" id="s7">
+    <div class="section-title">Section 07 — Post-Course Real Life</div>
+
+    <div class="qa-card" data-id="7-1">
+      <div class="qa-q">Q: Give a specific real-life example where Vipassana made a real difference.</div>
+      <div class="qa-a">
+        <div class="answer-text">In a group study session, someone made a dismissive comment about my preparation in front of others in a way that felt genuinely humiliating. My immediate internal response was intense — heat rising in my face, tightening in my chest, the strong impulse to retaliate sharply.
+
+What happened instead was a trained reflex. I noticed the physical sensation of embarrassment. Heat in the face, tightness in the throat. Just noticed it, without adding the story "this is terrible, they all think I am incompetent." That observation created enough space to respond differently. I said nothing for about ten seconds, made a neutral comment, and moved the conversation forward. Later I addressed it calmly with the person. It resolved without drama.
+
+What Vipassana gave me was not suppression — I felt the reaction fully. It gave me the gap between feeling and acting.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="7-2">
+      <div class="qa-q">Q: Have you failed to maintain equanimity despite Vipassana practice?</div>
+      <div class="qa-a">
+        <div class="answer-text">Yes, absolutely. During a particularly stressful preparation period, I had been irregular in my practice for nearly three weeks. A minor disagreement with a family member escalated into a much larger argument than it deserved. I said things with a sharpness that I recognized, even in the moment, was disproportionate.
+
+What the training did give me was the ability to recognize it quickly and course-correct within the same evening — to go back, acknowledge what had happened, and repair the conversation without ego getting in the way of the apology.
+
+The real lesson was about consistency. Goenka always said — skipping practice for weeks is like not eating for weeks and being surprised when you feel weak.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="7-3">
+      <div class="qa-q">Q: Be honest — what does your actual daily practice look like?</div>
+      <div class="qa-a">
+        <div class="answer-text">No, I do not sit for a full hour every single day. There have been stretches — particularly during intense preparation phases — where I missed days. Goenka recommends two one-hour sittings daily. I currently average one sitting of 30 to 45 minutes most mornings, with a shorter sitting in the evening when possible.
+
+What has been consistent is the morning practice. I protect morning sitting time almost regardless of what the day holds — waking 45 minutes earlier to ensure the day begins with practice. Even on days when my formal sitting was minimal, I notice the difference in the quality of the day — the level of reactivity, the clarity of attention. That difference itself is what sustains the motivation. Not discipline alone. Evidence.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section" id="s8">
+    <div class="section-title">Section 08 — Anicca: Nothing Lasts Forever</div>
+
+    <div class="qa-card" data-id="8-1">
+      <div class="qa-q">Q: "Everything is temporary" — why does hearing it in a meditation hall land differently than reading it in a book?</div>
+      <div class="qa-a">
+        <div class="answer-text">Because in a meditation hall — you are not reading it. You are feeling it. There is a profound difference between knowing that nothing lasts forever and actually sitting with your hand on your knee, watching a sensation arise, intensify, and dissolve — all within sixty seconds — without doing a single thing to make it happen.
+
+The book gives you the map. The meditation hall takes you to the territory. The pain in your knee that felt like it would last forever — shifts. The pleasant tingling that you wanted to hold — fades. Everything demonstrated its own impermanence without being asked. And something that is demonstrated to you in your own body is qualitatively different from something you read. You cannot argue with it. It happened. You felt it. It changed you.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="8-2">
+      <div class="qa-q">Q: If everything is temporary, doesn't that make life meaningless? Why work hard?</div>
+      <div class="qa-a">
+        <div class="answer-text">This is the most common misunderstanding — that impermanence leads to nihilism or passivity. Understanding impermanence actually makes effort clean, not meaningless. Work toward a goal without clinging to the outcome — and you work better. Your attention is fully on the work rather than split between the work and anxiety about the result.
+
+A surgeon analogy — an attached surgeon panics when things don't go as expected. An equanimous surgeon adapts. Understanding that preparation, exam, and career are all temporary doesn't reduce motivation — it frees you to give everything to the present moment without the self-defeating weight of compulsive attachment to outcome. Give completely, receive whatever comes with equanimity. That is complete engagement, not passivity.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="8-3">
+      <div class="qa-q">Q: As a forest officer, how does "everything temporary" change your conservation approach?</div>
+      <div class="qa-a">
+        <div class="answer-text">Conservation is not about making permanent what is inherently impermanent. It is about not accelerating impermanence through careless human action. A forest ecosystem has natural temporariness — species evolve, habitats shift over geological time. Conservation addresses the unnatural acceleration by exploitation and destruction.
+
+Anicca makes me a better conservationist by removing ego from the work. I won't save every forest, solve every conflict, or see the full fruits of what I plant. Knowing this frees me to do the work well without needing to see the outcome. A tree planted today will be fully grown 40 years after I have moved on — plant it anyway, fully, without needing to hold the fruit. Officers who need immediate results burn out. Officers who understand their work as a thread in a larger tapestry serve well and long.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="8-4">
+      <div class="qa-q">Q: What is the single most important thing "everything temporary" gave you?</div>
+      <div class="qa-a">
+        <div class="answer-text">The ability to begin.
+
+Before Vipassana — paralysis before difficult things. The syllabus felt enormous and always would be. The uncertainty always real. The inadequacy a feature of who I was. All felt permanent.
+
+Understanding Anicca in the body, not just the head — dissolved the permanence I had projected onto these things. The syllabus is large, yes — but this sitting I can read this one chapter. The uncertainty is real, yes — but this moment is already passing. The inadequacy is intense, yes — but I have sat with intense sensations before and watched them change.
+
+Not comfort. Not optimism. Not reassurance. The ability to begin.
+
+Begin. Observe. Continue. — the entire teaching in three words.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="section" id="s9">
+    <div class="section-title">Section 09 — Enlightenment</div>
+
+    <div class="qa-card" data-id="9-1">
+      <div class="qa-q">Q: What exactly is enlightenment in the context of Vipassana?</div>
+      <div class="qa-a">
+        <div class="answer-text">Goenka rarely used "enlightenment" directly — the word has been so romanticized it has lost its actual meaning. He preferred the Pali term "Nibbana" — which he described not as a place, not as a state of blissful floating — but as the complete cessation of craving and aversion. An enlightened mind has completely uprooted the compulsive habit of reacting to experience with either wanting or not-wanting.
+
+Not the cessation of experience — but the cessation of the compulsive, automatic, suffering-generating reaction to experience. He described it as the deepest peace imaginable. Not the peace of having everything you want. The peace of having been completely freed from the compulsion of wanting.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="9-2">
+      <div class="qa-q">Q: Are you enlightened?</div>
+      <div class="qa-a">
+        <div class="answer-text">Obviously not. Not remotely. I am a beginner who has been practicing long enough to understand how much beginning remains.
+
+What I have is the practice. The direction. The genuine intention to keep walking. And the lived understanding — verified in my own body and mind — that walking this path produces something real, something useful, something that makes me a better person and I believe will make me a better officer.
+
+That is not enlightenment. But it is not nothing either. And I would rather offer you that honest answer than perform a spiritual achievement I have not reached.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="9-3">
+      <div class="qa-q">Q: Is the pursuit of enlightenment selfish — spending all this time on yourself?</div>
+      <div class="qa-a">
+        <div class="answer-text">The accusation assumes that inner work and outer service are in competition. They are not. The quality of useful action depends entirely on the quality of the mind performing it. A polluted mind performing charitable actions pollutes the actions. A reactive mind making policy decisions contaminates the policy.
+
+The time invested in cleaning the instrument is not selfish. It is the most fundamental form of preparation for genuine service. The world is better served by a person who has done this work than by one who has not. That is not a justification. That is a responsibility.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="section" id="s10">
+    <div class="section-title">Section 10 — Fad or Real? Science & Evidence</div>
+
+    <div class="qa-card" data-id="10-1">
+      <div class="qa-q">Q: Be honest — do you genuinely believe meditation helps, or is it a modern fad?</div>
+      <div class="qa-a">
+        <div class="answer-text">Sir, I asked myself exactly this question before my first course. The skepticism was healthy. Because the meditation industry is genuinely full of fad. Expensive apps, celebrity endorsements, corporate mindfulness programs — that deserves skepticism.
+
+But here is the distinction I had to make — between the industry around meditation and the practice itself. The practice is 2500 years old. It predates every wellness trend, every self-help movement. It was developed not to make people more productive or relaxed, but to answer the most fundamental human question — why do we suffer, and is there a way out? That question is not a fad. And the practice developed to answer it is not a fad either.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="10-2">
+      <div class="qa-q">Q: What does science actually say about meditation?</div>
+      <div class="qa-a">
+        <div class="answer-text">The honest answer is — both weak and strong research exists. Sara Lazar's work at Harvard using MRI imaging showed measurable structural changes in long-term meditators — increased cortical thickness in the prefrontal cortex and reduced amygdala reactivity. The Tihar Jail experiment showed prisoners who completed 10-day courses had statistically significant reductions in aggression. Jon Kabat-Zinn's MBSR program has perhaps the largest clinical research base — meta-analyses show consistent, moderate-to-large effect sizes for reducing anxiety, depression, and chronic pain. The evidence is strong enough that MBSR is now offered in NHS hospitals as a standard treatment option.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="10-3">
+      <div class="qa-q">Q: Final question, hand on heart — does meditation really help?</div>
+      <div class="qa-a">
+        <div class="answer-text">Sir, hand on heart — yes.
+
+Not in the way the wellness industry promises. Not as a cure for anxiety or a shortcut to inner peace. But in the way that matters most —
+
+It has made me more honest with myself.
+
+Before Vipassana — I was capable of extraordinary self-deception. Of telling myself I was calm when I was afraid. Of believing I was acting from principle when I was acting from ego.
+
+Vipassana did not make these things stop. But it made them visible. And what is visible can be worked with. What is invisible runs the entire show without interference.
+
+That visibility — that growing, imperfect, ongoing ability to see what is actually happening inside me — is real. Is not a fad. Is perhaps the most useful thing I own.
+
+And it cost nothing except time and honesty. Which — when you think about it — is exactly what every true thing has always cost.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 11 -->
+  <div class="section" id="s11">
+    <div class="section-title">Section 11 — IFoS Field Applications</div>
+
+    <div class="qa-card" data-id="11-1">
+      <div class="qa-q">Q: You are posted in a remote forest area with complete isolation for months. How does Vipassana help?</div>
+      <div class="qa-a">
+        <div class="answer-text">During the 10-day course, for the first three days, I had no phone, no books, no conversation. Initially the silence felt suffocating. But gradually, the silence became my companion rather than my enemy. By Day 5 or 6, I was genuinely comfortable being alone with myself — something I had never truly experienced before.
+
+A remote forest posting is in many ways similar — isolation, no urban comforts, limited social interaction. The officer who has never been alone with his own mind will crack under such conditions. Someone who has voluntarily sat with themselves for 10 days, without escape, knows that the human mind can find its own equilibrium if you stop fighting the situation.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="11-2">
+      <div class="qa-q">Q: How does Vipassana help manage anger — with poachers, encroachers, difficult staff?</div>
+      <div class="qa-a">
+        <div class="answer-text">Vipassana taught me something specific about anger — it always has a physical component. There is a sensation in the body before the verbal or behavioral reaction. When you learn to observe that sensation rather than immediately act from it, the reaction loses its automatic quality. You don't become passive — you become deliberate.
+
+In practical terms, when a poacher or encroacher confronts me aggressively, I now have the capacity to feel the provocation fully — not suppress it — but choose how to respond. Sometimes firm authority is needed. Sometimes calm dialogue achieves more. Vipassana gave me the clarity to choose the right tool for each situation rather than always defaulting to the same reactive pattern.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="11-3">
+      <div class="qa-q">Q: How has Vipassana changed how you see nature and forests specifically?</div>
+      <div class="qa-a">
+        <div class="answer-text">One of the deepest experiences during my course was walking mindfully in the small garden during break time. Without the mental noise of constant thought and planning, I noticed things I had always walked past — the texture of bark, the movement of a small insect, the way light changed through leaves within a single minute. My senses were genuinely sharper because the mental clutter had temporarily reduced.
+
+Vipassana teaches that all of existence operates by the same law of Anicca — constant change. A forest is not a static resource — it is a dynamic, breathing, interconnected system in constant flux. An officer who understands impermanence at a lived level will approach forest management with humility — knowing that human intervention always has consequences we cannot fully predict.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 12 -->
+  <div class="section" id="s12">
+    <div class="section-title">Section 12 — The Mosquito Answer ⭐</div>
+
+    <div class="tip">⭐ This is your most memorable answer. Deliver it slowly. Let the silence after work.</div>
+
+    <div class="qa-card" data-id="12-1">
+      <div class="qa-q">Q: In one sentence — what is Vipassana?</div>
+      <div class="qa-a">
+        <div class="answer-text">Vipassana is the art of not slapping the mosquito.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="12-2">
+      <div class="qa-q">Q: Please explain — what does that mean?</div>
+      <div class="qa-a">
+        <div class="answer-text">On Day 3 of my course, during a sitting, a mosquito landed on my arm. I could feel it moving, could feel the sting beginning. Every instinct said — slap it. But the instruction was not to move for the duration of the sitting. So I stayed. And I watched. And within about a minute, the mosquito moved on by itself. I had done nothing. And the urge to slap, which had felt so urgent and completely justified — had passed without being acted upon.
+
+And I thought — this is the practice. Every day, in every situation, life lands a mosquito somewhere on my arm. Sometimes it is a small irritation. Sometimes it is a significant provocation. Sometimes it is a real injustice. And every time, the trained reflex is the same — react immediately, automatically, from the sensation. Slap.
+
+Vipassana trains a different reflex. Observe. Wait. Let the sensation arise and pass. And then — from that observation, from that moment of genuine stillness — choose. Not the slap of impulse. The response of clarity.
+
+In a forest posting — the mosquitoes are everywhere. Communities with legitimate grievances. Poachers with their own complex stories. Senior officers with their own pressures. If I slap every mosquito, I will spend my entire career reacting.
+
+And if I am honest — the hardest mosquitoes are not the external ones. They are the ones inside. The self-doubt before a difficult decision. The ego that wants recognition. The fear that a wrong posting will end a career. Those internal mosquitoes, if slapped, become far more destructive than any external provocation.
+
+Vipassana is the art of not slapping those either.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 13 -->
+  <div class="section" id="s13">
+    <div class="section-title">Section 13 — Teach the Board Live</div>
+
+    <div class="qa-card" data-id="13-1">
+      <div class="qa-q">Q: Can you demonstrate or teach us something from Vipassana right now?</div>
+      <div class="qa-a">
+        <div class="answer-text">Sir, I would not attempt to teach you Vipassana — because it cannot be transmitted through demonstration in a few minutes. Any attempt would be a performance rather than a transmission.
+
+But I would offer this — if you are willing, close your eyes for just thirty seconds and notice the breath entering and leaving through your nostrils. Not controlling it. Just noticing the sensation of air touching the skin at the tip of the nostrils. That is the beginning of Anapana.
+
+That is exactly what I do every morning for thirty minutes. The technique is that simple. What changes with practice is not the technique but the quality of attention you bring to it. It requires nothing from you — no equipment, no belief, no special condition. Just the willingness to look at what is already there.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 14 -->
+  <div class="section" id="s14">
+    <div class="section-title">Section 14 — Tough Critical Questions</div>
+
+    <div class="qa-card" data-id="14-1">
+      <div class="qa-q">Q: Isn't it possible you are just a good speaker who has memorized impressive answers?</div>
+      <div class="qa-a">
+        <div class="answer-text">Sir, that is perhaps the most important question anyone could ask me. The language of meditation is very easy to borrow. Words like equanimity, impermanence, awareness — they sound profound regardless of whether the speaker has actually experienced what they describe. I cannot prove to you in this room that my experience is genuine rather than performed.
+
+But I would offer this — ask me something I could not have prepared for. Notice whether I am genuinely listening to your questions or waiting for the cue that matches my prepared answer. Notice whether I am comfortable with silence or whether I rush to fill it.
+
+The practice shows up not in the answers about it but in the quality of presence around it. I invite you to judge that directly rather than judge what I say about it.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="14-2">
+      <div class="qa-q">Q: Has Vipassana ever made you feel superior to people who don't meditate?</div>
+      <div class="qa-a">
+        <div class="answer-text">Yes. And that is uncomfortable to admit in an interview, but it is true and important. In the early months after my first course, there was a subtle quality of judgment creeping into how I saw people around me — people reacting angrily, people complaining without awareness. I would notice these things and feel a quiet superiority.
+
+Goenka had a specific name for this — "Dhamma pride." The ego that dresses itself in spiritual clothing. The structure is identical to ordinary ego — only the content has changed.
+
+The corrective is Metta — genuine compassion. When you truly understand that every person's reactivity arises from the same conditioning that you yourself are slowly working through — the judgment transforms into recognition. I see in that angry person what I was before I began.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="14-3">
+      <div class="qa-q">Q: Is Vipassana just navel-gazing while the world has real problems?</div>
+      <div class="qa-a">
+        <div class="answer-text">The question contains an assumption worth examining — that thinking about yourself and engaging with the world's problems are mutually exclusive. They are not.
+
+The most consequential decisions in the world's real problems are made by people. With minds. Those minds are either examined or unexamined. The unexamined minds of powerful people have produced colonialism, environmental destruction, political violence, and institutional corruption — not because those people were evil, but because their unexamined craving and aversion operated without constraint through their power.
+
+Examining your own mind deeply and honestly is not turning away from the world's problems. It is attacking them at their root. That is not navel-gazing. That is the most fundamental preparation for engaging the world's problems effectively.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="14-4">
+      <div class="qa-q">Q: What would you do if your superior officer openly mocks your interest in meditation?</div>
+      <div class="qa-a">
+        <div class="answer-text">Sir, the first thing I will notice is the sensation that arises in response to being mocked — probably something between embarrassment and defensiveness, with a thread of hurt underneath both. That noticing itself is the practice working.
+
+Then — I will not defend Vipassana. I will not attempt to convert my superior or argue for the value of meditation. That would be both professionally inappropriate and personally counterproductive. What I will do is continue my practice quietly, privately, without making it anyone else's business.
+
+If I were to react to mockery of my meditation practice with defensiveness or wounded pride, I would be demonstrating precisely that the practice has not worked. The truest response to someone mocking your equanimity is equanimity.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 15 -->
+  <div class="section" id="s15">
+    <div class="section-title">Section 15 — Myths & Misconceptions</div>
+
+    <div class="qa-card" data-id="15-1">
+      <div class="qa-q">Q: People think Vipassana is about achieving a blank mind. Is that true?</div>
+      <div class="qa-a">
+        <div class="answer-text">This is the single most common misconception. A blank mind is not the goal. It is not even possible for most human beings. The goal is to change your relationship with thinking — from being entirely inside thought, swept away by it, to being aware of thought. Watching it arise. Watching it pass.
+
+Goenka said this with characteristic humor — if you are trying to make your mind completely blank, you will spend ten days thinking about making your mind blank. Which is still thinking. The noisiest sittings I had were sometimes the most productive — because watching the noise clearly was itself deeply revealing.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="15-2">
+      <div class="qa-q">Q: Vipassana is completely free — what is the catch?</div>
+      <div class="qa-a">
+        <div class="answer-text">There is no catch. Every 10-day course worldwide — accommodation, food, teaching — is provided entirely free of charge. At the end, if you have benefited, you are invited — never pressured — to donate whatever you wish, to fund the next student's course. The person who sat before you paid for your course.
+
+Teachers receive no payment whatsoever — they are required to have independent means of support. This rule ensures no teacher can become financially dependent on teaching, which would create conditions for exploitation. The entire economic model rests on the practice actually working. If it doesn't, people won't donate, and the organization will fail. That is not a flaw — it is the most trustworthy quality about it.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="15-3">
+      <div class="qa-q">Q: The Vipassana experiment in Tihar Jail — what happened?</div>
+      <div class="qa-a">
+        <div class="answer-text">The Tihar Jail experiment is one of the most compelling real-world demonstrations of Vipassana's practical impact — it happened in India, in the 1990s, under Inspector General Kiran Bedi. Prisoners who completed 10-day courses showed measurable reductions in aggressive behavior. Prison staff reported significant improvements in the atmosphere — less violence, less tension, more cooperative interaction. The results were documented and eventually made into a film — "Doing Time, Doing Vipassana."
+
+What makes this significant is the population. These were not educated urban professionals seeking self-improvement — these were people convicted of serious crimes, carrying histories of violence and trauma. If the technique could reach that depth of conditioning and produce measurable change in that population, the implications for rehabilitation and social change are profound.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 16 -->
+  <div class="section" id="s16">
+    <div class="section-title">Section 16 — Identity & Philosophy</div>
+
+    <div class="qa-card" data-id="16-1">
+      <div class="qa-q">Q: Has Vipassana changed your understanding of who you are?</div>
+      <div class="qa-a">
+        <div class="answer-text">Before Vipassana, I had a fairly fixed sense of identity — I am this kind of person, I react this way, I am not capable of that. What Vipassana showed me, through direct experience rather than philosophy, was how fluid and constructed this "self" actually is. In deep meditation, what you find is not a solid "me" sitting at the center of experience — you find a constantly changing stream of sensations, thoughts, and reactions, none of which stays long enough to be called a fixed identity.
+
+Practically, what this has meant is a loosening of ego-defensiveness. I am less attached to being right, less threatened by criticism, less identified with my successes or failures. And a public servant who holds their identity lightly is far better equipped to serve others than one who is constantly protecting a fragile self-image.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="16-2">
+      <div class="qa-q">Q: What is Vipassana for you — the unforgettable answer?</div>
+      <div class="qa-a">
+        <div class="answer-text">Sir, for most of my life — I lived about two seconds behind myself.
+
+Something would happen — a criticism, a failure, a conflict — and by the time I became aware of what was actually occurring, I had already reacted. Already spoken. Already made a decision from fear, or pride, or habit — rather than from clarity. I didn't know this was happening. You cannot see a gap that doesn't exist.
+
+Then I sat in a room for ten days. No phone. No books. No conversation. No escape. Just — me. And my mind. And the instruction to watch.
+
+And what I found was extraordinary in its ordinariness. I found that every reaction I had ever had had a physical address. It lived somewhere in the body. The anger lived as heat in the chest. The anxiety lived as hollowness in the stomach. The fear lived as coldness behind the sternum.
+
+These were not metaphors. They were sensations. Real. Physical. Observable.
+
+And when I learned to observe the sensation directly — not the story about it — I found that it was already moving. Already changing. Already, in the very act of being observed, beginning to dissolve.
+
+So what is Vipassana for me?
+
+Vipassana is the two seconds I didn't used to have.
+
+That gap — between what happens and how I respond — that is everything. In that gap is the difference between an officer who enforces law from anger and one who enforces it from justice. Between a man who hears criticism and defends himself and one who hears it and learns from it.
+
+Between a reaction — and a choice.
+
+Vipassana gave me the choice.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 17 -->
+  <div class="section" id="s17">
+    <div class="section-title">Section 17 — ⭐ All Tips: Master Delivery Guide</div>
+
+    <div class="tip">🎯 The board will not ask all questions. They will ask perhaps 6–10. The purpose is not to memorize answers — it is to have thought so deeply about every dimension that whatever comes, you can speak from a place that is genuinely yours.</div>
+
+    <div class="qa-card" data-id="17-1">
+      <div class="qa-q">Before the Interview</div>
+      <div class="qa-a">
+        <div class="answer-text">The day before — 45-minute Anapana sitting in the morning. A walk in a natural space. Light revision only — no new material. Early dinner. No screens after 8pm. 10 minutes of Anapana before sleeping.
+
+Morning of the interview — 20 minutes of Anapana before anything else. Not to achieve calmness — trying to achieve calmness creates its own tension. Just to observe whatever is present. This produces clean nervousness rather than spiraling, compounding anxiety.
+
+Enter the room and physically settle before speaking. Place your hands quietly. Let your breath slow naturally. Three seconds of genuine stillness before you begin is worth more than any opening sentence.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="17-2">
+      <div class="qa-q">During the Interview — Core Rules</div>
+      <div class="qa-a">
+        <div class="answer-text">Always answer in first person and from experience. The board has seen hundreds of candidates quote Goenka. What will distinguish you is the authenticity of what you personally felt and learned. "I felt..." rather than "one feels..." lands with ten times more credibility.
+
+Pause before answering — genuinely pause. Not a performed pause. Actually take the question in. The board will notice the difference between someone who heard the trigger word and retrieved the matching prepared answer, and someone who is actually thinking.
+
+Use silence as a tool. Especially after your most important statements. The three seconds of silence after "Vipassana gave me the choice" — let them happen. Don't rush to explain what you just said. Trust it.
+
+When you don't know something — say so directly. That honesty is itself a demonstration of the practice.
+
+Never speak faster when nervous. If you notice yourself speeding up — take one deliberate breath and consciously slow down. That act in real time in front of the board is itself a demonstration of Vipassana.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+
+    <div class="qa-card" data-id="17-3">
+      <div class="qa-q">What to Avoid</div>
+      <div class="qa-a">
+        <div class="answer-text">Never make Vipassana sound perfect or yourself sound transformed. The board will distrust perfection. Say "I failed to maintain equanimity on this occasion. Here is what happened and what I learned." That honest accounting is more convincing than any polished claim of consistent equanimity.
+
+Never become evangelical about Vipassana. Don't recommend it to board members unless directly asked. Don't imply that people who haven't done it are missing something. That attitude contradicts the spirit of the practice — and the board will notice.
+
+Never use Vipassana jargon without explaining it. If you say "Sankara" — immediately explain it in plain language.
+
+The board will remember the candidate who spoke like a human being who had actually sat in that hall, felt their knees ache, and found something real on Day 6 — not the candidate who delivered a polished lecture on Buddhist philosophy.</div>
+        <textarea class="answer-edit"></textarea>
+        <button class="edit-btn" onclick="toggleEdit(this)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end main -->
+
+<!-- SAVE BAR -->
+<div id="save-all-bar">
+  <button id="save-all-btn" onclick="saveAll()">💾 Save All Changes</button>
+  <span id="save-status">All changes auto-saved in this browser.</span>
+  <button id="export-btn" onclick="exportHTML()">⬇ Export HTML</button>
+</div>
+
+<script>
+// Load saved answers on page load
+document.querySelectorAll('.qa-card').forEach(card => {
+  const id = card.dataset.id;
+  const saved = localStorage.getItem('v_' + id);
+  if (saved) {
+    card.querySelector('.answer-text').textContent = saved;
+  }
+});
+
+function toggleEdit(btn) {
+  const qa = btn.closest('.qa-a');
+  const text = qa.querySelector('.answer-text');
+  const textarea = qa.querySelector('.answer-edit');
+
+  if (btn.textContent === 'Edit') {
+    textarea.value = text.textContent;
+    textarea.style.display = 'block';
+    text.style.display = 'none';
+    btn.textContent = 'Save';
+    btn.className = 'edit-btn save-btn';
+    textarea.focus();
+  } else {
+    const newVal = textarea.value;
+    text.textContent = newVal;
+    textarea.style.display = 'none';
+    text.style.display = 'block';
+    btn.textContent = 'Edit';
+    btn.className = 'edit-btn';
+    // Auto-save
+    const card = btn.closest('.qa-card');
+    localStorage.setItem('v_' + card.dataset.id, newVal);
+    showStatus('Saved!');
+  }
+}
+
+function saveAll() {
+  document.querySelectorAll('.qa-card').forEach(card => {
+    const id = card.dataset.id;
+    const text = card.querySelector('.answer-text');
+    localStorage.setItem('v_' + id, text.textContent);
+  });
+  showStatus('All saved ✓');
+}
+
+function showStatus(msg) {
+  const s = document.getElementById('save-status');
+  s.textContent = msg;
+  setTimeout(() => s.textContent = 'All changes auto-saved in this browser.', 2000);
+}
+
+function exportHTML() {
+  // Save all first
+  saveAll();
+  // Clone and bake in current answers
+  const clone = document.documentElement.cloneNode(true);
+  // Remove edit buttons and textareas from export
+  clone.querySelectorAll('.edit-btn, .answer-edit').forEach(el => el.remove());
+  clone.querySelectorAll('.answer-text').forEach(el => el.style.display = 'block');
+  // Remove save bar
+  const bar = clone.querySelector('#save-all-bar');
+  if (bar) bar.remove();
+  const html = '<!DOCTYPE html>\n' + clone.outerHTML;
+  const blob = new Blob([html], {type: 'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'vipassana_guide_my_answers.html';
+  a.click();
+}
+
+// Active nav
+window.addEventListener('scroll', () => {
+  const links = document.querySelectorAll('.nav-link');
+  let current = '';
+  document.querySelectorAll('.section').forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+});
+</script>
+</body>
+</html>
